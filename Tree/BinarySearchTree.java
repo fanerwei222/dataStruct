@@ -189,10 +189,12 @@ public class BinarySearchTree {
         if (null == findNode.getRightChildren() && null != findNode.getLeftChildren()){
             if (isParentLeftChildren(findNode, key)){
                 findNode.getParent().setLeftChildren(findNode.getLeftChildren());
+                findNode.getLeftChildren().setParent(findNode.getParent());
                 findNode = null;
                 return true;
             }else{
                 findNode.getParent().setRightChildren(findNode.getLeftChildren());
+                findNode.getLeftChildren().setParent(findNode.getParent());
                 findNode = null;
                 return true;
             }
