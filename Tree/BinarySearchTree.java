@@ -321,6 +321,7 @@ public class BinarySearchTree {
             return parentNode;
         }else {
             parentNode.getParent().setLeftChildren(parentNode.getRightChildren());
+            parentNode.getRightChildren().setParent(parentNode.getParent());
             return parentNode;
         }
     }
